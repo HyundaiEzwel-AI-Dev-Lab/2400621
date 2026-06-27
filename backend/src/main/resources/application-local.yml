@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/hpms}
+    username: ${SPRING_DATASOURCE_USERNAME:hpms}
+    password: ${SPRING_DATASOURCE_PASSWORD:hpms}
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug

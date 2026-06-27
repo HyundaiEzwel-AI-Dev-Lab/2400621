@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+set -eu
+
+if command -v gradle >/dev/null 2>&1; then
+  exec gradle "$@"
+fi
+
+if command -v docker >/dev/null 2>&1; then
+  if [ -z "${DOCKER_HOST:-}" ] && [ -S "$HOME/.docker/run/docker.sock" ]; then
+    export DOCKER_HOST="unix://$HOME/.docker/run/docker.sock"
+  fi
+
+  exec docker run --rm \
+    --platform linux/amd64 \
+    -u "$(id -u):$(id -g)" \
+    -e GRADLE_USER_HOME=/workspace/.gradle \
+    -v "$PWD":/workspace \
+    -w /workspace \
+    gradle:8.10.2-jdk21 \
+    gradle "$@"
+fi
+
+echo "Gradle is not installed and Docker is not available." >&2
+exit 1

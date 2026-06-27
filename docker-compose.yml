@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: h-pms-postgres
+    environment:
+      POSTGRES_DB: hpms
+      POSTGRES_USER: hpms
+      POSTGRES_PASSWORD: hpms
+      TZ: Asia/Seoul
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hpms -d hpms"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    container_name: h-pms-backend
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/hpms
+      SPRING_DATASOURCE_USERNAME: hpms
+      SPRING_DATASOURCE_PASSWORD: hpms
+      TZ: Asia/Seoul
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: h-pms-frontend
+    environment:
+      VITE_API_BASE_URL: http://backend:8080
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  postgres-data:
