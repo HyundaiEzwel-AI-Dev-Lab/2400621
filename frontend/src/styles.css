@@ -49,7 +49,7 @@ button:disabled {
 }
 
 .sidebar a.active {
-  background: #2563eb;
+  background: #2f4054;
   border-radius: 6px;
   color: #fff;
 }
@@ -111,8 +111,8 @@ button:disabled {
 }
 
 .tabs button.selected {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: #3f5f73;
+  border-color: #3f5f73;
   color: #fff;
 }
 
