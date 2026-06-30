@@ -93,6 +93,7 @@ flowchart TD
 
 ### 카드형
 <img width="1666" height="928" alt="카드형" src="https://github.com/user-attachments/assets/addfa33d-1d7e-43f8-84df-795bfa758acd" />
+
 ### 캘린더형
 <img width="1665" height="926" alt="캘린더형" src="https://github.com/user-attachments/assets/1772752e-739a-47ed-97d3-794dea21fa0a" />
 
