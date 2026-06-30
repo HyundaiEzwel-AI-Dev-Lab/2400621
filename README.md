@@ -7,7 +7,24 @@
 
 ---
 
-## 1. 🧭 Development Methodology
+## 1. ✨ Why Vibe Coding
+
+Vibe Coding은 AI에게 무작정 코드를 맡기는 방식이 아니다. 
+이번 프로젝트에서는 Codex가 빠르게 산출물을 만들 수 있는 장점을 활용하되,
+**문서와 승인 단계로 범위를 통제했다.**
+
+적용 이유는 다음과 같다.
+
+- 📄 PPTX 화면 기획을 빠르게 요구사항 문서로 전환할 수 있다.
+- 🧩 요구사항을 화면, API, DB, 컴포넌트 설계로 분해할 수 있다.
+- 🏗️ Phase 단위로 작게 구현하고 바로 검증할 수 있다.
+- 🧪 테스트 실패와 환경 문제를 worklog에 누적해 재현성을 높일 수 있다.
+- 🤝 사람은 제품 판단과 범위 결정을 담당하고, Codex는 반복 작업과 정리를 담당할 수 있다.
+
+---
+
+
+## 2. 🧭 Development Methodology
 
 이번 프로젝트는 Codex와 함께 아래 흐름을 반복하며 진행했다.
 <img width="1477" height="574" alt="스크린샷 2026-06-30 오후 9 38 10" src="https://github.com/user-attachments/assets/dd350c3d-93b4-40a1-b95e-8916349a18a4" />
@@ -28,7 +45,7 @@
 
 ---
 
-## 2. 📚 Document Driven Development
+## 3. 📚 Document Driven Development
 
 이 프로젝트의 핵심 개념은 **Document Driven Development**다.
 
@@ -57,22 +74,6 @@ flowchart TD
 - **구현 전에는 계획을 먼저 작성하고 사용자 승인을 받는다.**
 - **Phase 완료 후에는 코드 수정 없이 검증 리포트를 작성한다.**
 - **실패, 예외, 보류 사항은 `docs/worklog.md`와 `docs/issues.md`에 남긴다.**
-
----
-
-## 3. ✨ Why Vibe Coding
-
-Vibe Coding은 AI에게 무작정 코드를 맡기는 방식이 아니다. 
-이번 프로젝트에서는 Codex가 빠르게 산출물을 만들 수 있는 장점을 활용하되,
-**문서와 승인 단계로 범위를 통제했다.**
-
-적용 이유는 다음과 같다.
-
-- 📄 PPTX 화면 기획을 빠르게 요구사항 문서로 전환할 수 있다.
-- 🧩 요구사항을 화면, API, DB, 컴포넌트 설계로 분해할 수 있다.
-- 🏗️ Phase 단위로 작게 구현하고 바로 검증할 수 있다.
-- 🧪 테스트 실패와 환경 문제를 worklog에 누적해 재현성을 높일 수 있다.
-- 🤝 사람은 제품 판단과 범위 결정을 담당하고, Codex는 반복 작업과 정리를 담당할 수 있다.
 
 ---
 
