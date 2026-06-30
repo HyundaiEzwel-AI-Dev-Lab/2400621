@@ -322,15 +322,6 @@ Phase 완료 상태를 기준으로 검증 리포트를 작성하라.
 ## 11. 🏛️ Architecture
 
 ```mermaid
-flowchart LR
-  Browser["Browser"] --> Frontend["Vue3 + Vite Frontend"]
-  Frontend -->|"REST API"| Backend["Spring Boot Backend"]
-  Backend --> Controller["Controller"]
-  Controller --> Service["Service"]
-  Service --> Repository["Repository"]
-  Repository --> DB[("PostgreSQL")]
-```
-```mermaid
 flowchart TB
   User["👤 User / Browser"]
 
